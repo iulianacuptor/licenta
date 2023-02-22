@@ -67,3 +67,10 @@ create table MultipleAuthors(
 	foreign key(idBook) references Books(idBook),
     foreign key(idAuthor) references Authors(idAuthor)
 );
+
+create table Images(
+	idImage int primary key auto_increment,
+    imageURL varchar(64) not null,
+    idBook int,
+    foreign key(idBook) references Books(idBook)
+)
