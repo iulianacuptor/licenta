@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,7 +23,7 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name="idUser")
-    private Users user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name="idBook")

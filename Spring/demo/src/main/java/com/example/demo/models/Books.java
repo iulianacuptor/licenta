@@ -39,7 +39,7 @@ public class Books {
 
     @ManyToOne
     @JoinColumn(name="idUser")
-    private Users users;
+    private User users;
 
     @ManyToMany(mappedBy = "booksList")
     private List<Authors> authorsList = new ArrayList<>();

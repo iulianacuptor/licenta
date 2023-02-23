@@ -19,7 +19,7 @@ public class Roles {
     private String roleName;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "role")
-    private List<Users> users;
+    private List<User> users;
 
     @Override
     public boolean equals(Object o) {
