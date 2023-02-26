@@ -29,6 +29,13 @@ create table Series(
     serieName varchar(256) not null
 );
 
+create table BookStatus(
+	idStatus int primary key auto_increment,
+    bookStatus varchar(20) not null,
+    startDate datetime,
+    endDate datetime
+);
+
 create table Books(
 	idBook int primary key auto_increment,
     bookName varchar(256) not null,
@@ -39,9 +46,11 @@ create table Books(
     idPublisher int,
     idSerie int,
     idUser int,
+    idStatus int,
     foreign key(idPublisher) references PublishingHouse(idPublisher),
     foreign key(idSerie) references Series(idSerie),
-    foreign key(idUser) references Users(idUser)
+    foreign key(idUser) references Users(idUser),
+    foreign key(idStatus) references BookStatus(idStatus)
 );
 
 create table Review(
@@ -73,4 +82,6 @@ create table Images(
     imageURL varchar(64) not null,
     idBook int,
     foreign key(idBook) references Books(idBook)
-)
+);
+
+
