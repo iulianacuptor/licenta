@@ -13,7 +13,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name= "Books")
+@Table(name= "books")
 public class Books {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Id Long idBook;
@@ -44,6 +44,9 @@ public class Books {
     @ManyToMany(mappedBy = "booksList")
     private List<Authors> authorsList = new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name="idStatus")
+    private BookStatus bookStatus;
     @Override
     public String toString() {
         return "Books{" +

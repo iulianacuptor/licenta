@@ -13,7 +13,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name= "Authors")
+@Table(name= "authors")
 public class Authors {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Id Long idAuthor;
@@ -21,7 +21,7 @@ public class Authors {
     private String lastName;
 
     @ManyToMany
-    @JoinTable(name="MultipleAuthors",
+    @JoinTable(name="multipleAuthors",
         joinColumns = @JoinColumn(name="idAuthor"),
         inverseJoinColumns = @JoinColumn(name="idBook")
     )

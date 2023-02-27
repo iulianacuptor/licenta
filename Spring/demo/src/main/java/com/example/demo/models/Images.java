@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name= "Images")
+@Table(name= "images")
 public class Images {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Id Long idImage;

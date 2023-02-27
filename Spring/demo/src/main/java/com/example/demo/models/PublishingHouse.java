@@ -12,7 +12,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name= "PublishingHouse")
+@Table(name= "publishingHouse")
 public class PublishingHouse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Id Long idPublisher;
