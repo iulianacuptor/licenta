@@ -22,4 +22,16 @@ public class BookStatus {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "bookStatus")
     private List<Books> book;
+
+    @Override
+    public String toString() {
+        return "BookStatus{" +
+                "idStatus=" + idStatus +
+                ", bookStatus='" + bookStatus + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", book=" + book +
+                '}';
+    }
+
 }

@@ -4,12 +4,12 @@ use licenta;
 
 -- Tabele:
 
-create table Roles(
+create table roles(
 	idRole int primary key auto_increment,
     roleName varchar(50) not null
 );
 
-create table Users(
+create table users(
 	idUser int primary key auto_increment,
     firstName varchar(256) not null,
     lastName varchar(256) not null,
@@ -19,24 +19,24 @@ create table Users(
     foreign key(idRole) references Roles(idRole)
 );
 
-create table PublishingHouse(
+create table publishingHouse(
 	idPublisher int primary key auto_increment,
     publisherName varchar (256) not null
 );
 
-create table Series(
+create table series(
 	idSerie int primary key auto_increment,
     serieName varchar(256) not null
 );
 
-create table BookStatus(
+create table bookStatus(
 	idStatus int primary key auto_increment,
     bookStatus varchar(20) not null,
     startDate datetime,
     endDate datetime
 );
 
-create table Books(
+create table books(
 	idBook int primary key auto_increment,
     bookName varchar(256) not null,
     rating double,
@@ -53,7 +53,7 @@ create table Books(
     foreign key(idStatus) references BookStatus(idStatus)
 );
 
-create table Review(
+create table review(
 	idReview int primary key auto_increment,
     reviewDescription varchar(512) not null,
     rating double not null,
@@ -64,20 +64,20 @@ create table Review(
     foreign key(idBook) references Books(idBook)
 );
 
-create table Authors(
+create table authors(
 	idAuthor int primary key auto_increment,
 	firstName varchar(256) not null,
     lastName varchar(256) not null
 );
 
-create table MultipleAuthors(
+create table multipleAuthors(
 	idAuthor int,
     idBook int,
 	foreign key(idBook) references Books(idBook),
     foreign key(idAuthor) references Authors(idAuthor)
 );
 
-create table Images(
+create table images(
 	idImage int primary key auto_increment,
     imageURL varchar(64) not null,
     idBook int,
