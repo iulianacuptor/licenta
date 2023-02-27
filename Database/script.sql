@@ -83,5 +83,3 @@ create table Images(
     idBook int,
     foreign key(idBook) references Books(idBook)
 );
-
-
